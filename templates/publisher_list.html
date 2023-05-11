@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>名称</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+    {% for i in pub %}
+        <tr>
+            <td>{{ i.pk }}</td>
+            <td>{{ i.name }}</td>
+            <td>
+                <a href="/website/articles/add_publisher/">新增</a>
+                <a href="/website/articles/del_publisher/?id={{ i.pk }}">删除</a>
+                <a href="/website/articles/edit_publisher/?id={{ i.pk }}">编辑</a>
+            </td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+</body>
+</html>
